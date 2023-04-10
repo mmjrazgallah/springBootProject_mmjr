@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Contact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+    <!-- Pignose Calender -->
+    <link href="/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="/plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+    <!-- Custom Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<!--**********************************
+    Main wrapper start
+***********************************-->
+<div id="main-wrapper">
+    <div th:replace="fragments/preloader :: preloader"/> </div>
+<div th:replace="fragments/navheader :: navheader"/> </div>
+<div th:replace="fragments/header :: header"/> </div>
+<div th:replace="fragments/sidebar :: sidebar"/> </div>
+
+
+    <!--**********************************
+        Content body start
+    ***********************************-->
+    <div class="content-body">
+
+
+        <!-- row -->
+
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <h3> Contact super Admin</h3>
+                    <div th:switch="${reponse}" class="container my-5">
+
+                        <span th:case="null" class="badge badge-success"></span>
+                        <span th:case="*" class="badge badge-danger">success send </span>
+
+
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-validation">
+                                <form th:action="@{/contact}" class="form-valide" method="post" enctype="multipart/form-data">
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" for="username">Username <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter a username..">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" for="email">Email <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="email" name="email" placeholder="Your valid email..">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" for="phone">Phone <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <input type="text" class="form-control" id="phone" name="phone" placeholder="216-99-999-000">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-lg-4 col-form-label" for="suggestions">Suggestions <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-6">
+                                            <textarea class="form-control" id="suggestions" name="suggestions" rows="5" placeholder="What would you like to see?"></textarea>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group row">
+                                        <div class="col-lg-8 ml-auto">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #/ container -->
+    </div>
+    <!--**********************************
+        Content body end
+    ***********************************-->
+
+
+    <!--**********************************
+        Footer start
+    ***********************************-->
+    <div class="footer">
+        <div class="copyright">
+            <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+        </div>
+    </div>
+    <!--**********************************
+        Footer end
+    ***********************************-->
+</div>
+<!--**********************************
+    Main wrapper end
+***********************************-->
+
+<!--**********************************
+    Scripts
+***********************************-->
+<script src="plugins/common/common.min.js"></script>
+<script src="js/custom.min.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/gleek.js"></script>
+<script src="js/styleSwitcher.js"></script>
+
+<script src="./plugins/validation/jquery.validate.min.js"></script>
+<script src="./plugins/validation/jquery.validate-init.js"></script>
+
+</body>
+
+</html>
